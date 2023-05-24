@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { TextField, Button, Box } from "@mui/material";
 import { validarPassword, validarEmail } from "./validaciones";
 
-const DatosUsuario = ({updateStep}) => {
+const DatosUsuario = ({ updateStep }) => {
   //Definiendo estado
   const [email, setEmail] = useState({ value: "", valid: null });
   const [password, setPassword] = useState({ value: "", valid: null });
@@ -19,15 +19,13 @@ const DatosUsuario = ({updateStep}) => {
       }}
       onSubmit={(e) => {
         e.preventDefault();
-        if(email.valid && password.valid) {
+        if (email.valid && password.valid) {
           console.log(email, password);
           updateStep(1);
-
-        }else {
-          console.log("Error Formulario")
+        } else {
+          console.log("Error Formulario");
         }
-      }}
-    >
+      }}>
       <TextField
         label="Correo electrónico"
         variant="outlined"
@@ -49,7 +47,10 @@ const DatosUsuario = ({updateStep}) => {
         margin="dense"
         type="password"
         error={password.valid === false}
-        helperText={password.valid === false && "La constaseña debe contener al menos una letra mayuscula, numeros y un caracter especia"}
+        helperText={
+          password.valid === false &&
+          "La constaseña debe contener al menos una letra mayuscula, numeros y un caracter especia"
+        }
         value={password.value}
         onChange={(input) => {
           const password = input.target.value;
