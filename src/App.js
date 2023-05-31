@@ -1,4 +1,5 @@
 import { MainSpace, ImageSpace, FormSpace } from "./styles";
+import { Button, Container } from "@mui/material";
 import Form from "./Form";
 
 function App() {
@@ -7,6 +8,10 @@ function App() {
       <ImageSpace />
       <FormSpace>
         <Form />
+        <Container>
+          <Button>-</Button>
+          <Button>+</Button>
+        </Container>
       </FormSpace>
     </MainSpace>
   );
