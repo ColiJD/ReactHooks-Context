@@ -5,6 +5,7 @@ import { CounterContext } from "../../constex";
 const Step = ({ data, step, pasos }) => {
   const { inputs, buttonText, onSubmit } = data;
   const counterData = useContext(CounterContext);
+  console.log(counterData)
   return (
     <Box
       component="form"
@@ -16,7 +17,7 @@ const Step = ({ data, step, pasos }) => {
         flexDirection: "column",
       }}
       onSubmit={(e) => onSubmit(e, step, pasos)}>
-      <strong>El valor del contenedor es: 0</strong>
+      <strong>El valor del contenedor es: {counterData.count}</strong>
       {inputs.map((input, i) => {
         const { label, type, value, valid, onChange, helperText, validator } = input;
         return (
